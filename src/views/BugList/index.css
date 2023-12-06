@@ -33,7 +33,7 @@
                 border-collapse: collapse;
                 /* width: 120vh; */
                 /* font-family: Arial, Helvetica, sans-serif; */
-                margin-top: 50px;
+                margin-top: 30px;
             }
 
             .category-table td,
@@ -57,6 +57,13 @@
 
             .category-table tr:hover {
                 background-color: #ddd;
+            }
+
+            .btn {
+                display: flex;
+                justify-content: space-between;
+                margin: 30px;
+
             }
         }
 

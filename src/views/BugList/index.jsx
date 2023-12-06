@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../Navbar";
 import Side from "../aside";
 import "./index.css";
+import Btn from "../button";
 
 
 
@@ -16,7 +17,15 @@ function BugList() {
                     <div className="as"><Side /></div>
                     <div className="container">
 
+
+                        <div className="btn">
+                            <div><h1>Bug list</h1></div>
+                            <div><Btn /></div>
+
+                        </div>
+
                         <table className="category-table">
+
                             <thead>
 
                                 <tr>
