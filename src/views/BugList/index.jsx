@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../Navbar";
 import Side from "../aside";
-import "./buglist.css";
+import "./index.css";
 
 
 
@@ -13,9 +13,61 @@ function BugList() {
                 <Nav />
 
                 <div className="aside">
-                    <div>Bug List</div>
+                    <div className="as"><Side /></div>
+                    <div className="container">
 
-                    <Side />
+                        <table className="category-table">
+                            <thead>
+
+                                <tr>
+                                    <th>Bug Category</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Category-1</td>
+                                    <td>title-1</td>
+                                    <td>Des-1</td>
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+
 
                 </div>
 
