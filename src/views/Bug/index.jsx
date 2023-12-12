@@ -3,10 +3,10 @@ import Button from "../button";
 import "./index.css";
 
 function Bug(props) {
-    const { bug, index, deleteBug, editItem } = props;
+    const { bug, deleteBug, editItem } = props;
 
     return (
-        <tr key={index}>
+        <tr>
             <td>{bug.project}</td>
             <td>{bug.title}</td>
             <td>{bug.desc}</td>
@@ -14,8 +14,8 @@ function Bug(props) {
             <td>{bug.status}</td>
             <td>
                 <div className="btns">
-                    <Button onClick={() => deleteBug(index)} title="Delete" />
-                    <Button onClick={() => editItem(index, bug)} title="Edit" />
+                    <Button onClick={() => deleteBug(bug.id)} title="Delete" />
+                    <Button onClick={() => editItem(bug.id)} title="Edit" />
                 </div>
             </td>
         </tr>

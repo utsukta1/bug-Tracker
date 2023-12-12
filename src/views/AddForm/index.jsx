@@ -6,6 +6,7 @@ import Filter from "../Filter";
 function AddForm(props) {
     const { onAddSuccess, bugToEdit, updateBug } = props;
     const [formState, setFormState] = useState({
+        id: Date.now(),
         title: '',
         project: '',
         priority: '',
@@ -19,12 +20,34 @@ function AddForm(props) {
             status: ''
         }
     });
+    const handleChangeFilter1 = (event) => {
+        const { value } = event.target;
+        if (value.trim() === '') {
+            setFormState({
+                ...formState,
+                priority: '',
+                errors: {
+                    ...formState.errors,
+                    priority: 'Priority is required',
+                },
+            });
+        } else {
+            setFormState({
+                ...formState,
+                priority: value,
+                errors: {
+                    ...formState.errors,
+                    priority: '',
+                },
+            });
+        }
+    };
 
     useEffect(() => {
         if (bugToEdit) {
-
             setFormState({
                 ...formState,
+                id: bugToEdit.id || '',
                 title: bugToEdit.title || '',
                 project: bugToEdit.project || '',
                 priority: bugToEdit.priority || '',
@@ -37,7 +60,8 @@ function AddForm(props) {
     const saveData = (event) => {
         event.preventDefault();
 
-        const { title, project, priority, desc, status } = formState;
+        const { id, title, project, priority, desc, status } = formState;
+
 
         const errors = {
             title: title ? '' : 'Title is required',
@@ -52,31 +76,31 @@ function AddForm(props) {
             return;
         }
 
-        const bug = { title, project, priority, desc, status };
+        const bug = { id, title, project, priority, desc, status };
 
         if (bugToEdit) {
-
             updateBug(bug);
         } else {
 
             onAddSuccess(bug);
         }
 
-        setFormState({
-            title: '',
-            project: '',
-            priority: '',
-            desc: '',
-            status: '',
-            errors: {
-                title: '',
-                project: '',
-                priority: '',
-                desc: '',
-                status: ''
-            }
-        });
+        // setFormState({
+        //     title: '',
+        //     project: '',
+        //     priority: '',
+        //     desc: '',
+        //     status: '',
+        //     errors: {
+        //         title: '',
+        //         project: '',
+        //         priority: '',
+        //         desc: '',
+        //         status: ''
+        //     }
+        // });
     };
+
 
     return (
         <>
@@ -98,15 +122,15 @@ function AddForm(props) {
                     placeholder="Project"
                 />
                 {formState.errors.project && <span className="error">{formState.errors.project}</span>}
-                <input
+                {/* <input
                     type="text"
                     className="inp"
                     value={formState.priority}
                     onChange={(e) => setFormState({ ...formState, priority: e.target.value })}
                     placeholder="Priority"
-                />
-                {/* <Filter value={formState.priority}
-                    onChange={(e) => setFormState({ ...formState, priority: e.target.value })} /> */}
+                /> */}
+                <Filter value={formState.priority}
+                    onChange={handleChangeFilter1} />
                 {formState.errors.priority && <span className="error">{formState.errors.priority}</span>}
                 <input
                     type="text"

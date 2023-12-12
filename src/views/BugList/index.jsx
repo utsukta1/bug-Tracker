@@ -20,10 +20,12 @@ function BugList() {
     };
 
     const onAddSuccess = (newBugItem) => {
+        console.log('success', JSON.stringify(newBugItem, null, 2));
         let updatedBugs;
         if (editIndex !== null) {
             updatedBugs = [...bugData];
-            updatedBugs[editIndex] = newBugItem;
+            const index = updatedBugs.findIndex((update) => (update.id === editIndex));
+            updatedBugs[index] = newBugItem
             setEditIndex(null);
         } else {
             updatedBugs = [...bugData, newBugItem];
@@ -34,17 +36,29 @@ function BugList() {
         setShowModal(false);
     };
 
-    const deleteBug = (index) => {
-        const updatedBugs = [...bugData];
-        updatedBugs.splice(index, 1);
+    console.log('aa', bugData);
+
+    // const deleteBug = (index) => {
+    //     const updatedBugs = [...bugData];
+    //     updatedBugs.splice(index, 1);
+    //     setBugData(updatedBugs);
+    //     localStorage.setItem('bugs', JSON.stringify(updatedBugs));
+    // };
+
+    const deleteBug = (id) => {
+        const updatedBugs = bugData.filter((bug) => bug.id !== id);
         setBugData(updatedBugs);
         localStorage.setItem('bugs', JSON.stringify(updatedBugs));
     };
 
-    const editItem = (index, bug) => {
-        setEditIndex(index);
+
+    const editItem = (id) => {
+        console.log('id', id);
+        setEditIndex(id);
         toggleModal();
     };
+
+
 
     const updateBug = (bug) => {
         onAddSuccess(bug);
@@ -70,6 +84,10 @@ function BugList() {
 
     }, [filter, bugData])
 
+    const bugToEdit = useMemo(() => {
+        return bugData.find((bug) => bug.id = editIndex)
+    }, [bugData, editIndex]);
+
     return (
         <>
             <div className="total">
@@ -78,7 +96,7 @@ function BugList() {
                     <div className="container">
                         <div className="btn">
                             <div><h1>Bug list</h1></div>
-                            <Filter handleChangeFilter={handleChangeFilter} />
+                            <Filter onChange={handleChangeFilter} />
                             <Button onClick={toggleModal} title="Report a bug" />
                             {showModal && (
                                 <div className="modal">
@@ -86,7 +104,7 @@ function BugList() {
                                         <span className="close" onClick={toggleModal}>&times;</span>
                                         <AddForm
                                             onAddSuccess={onAddSuccess}
-                                            bugToEdit={editIndex !== null ? bugData[editIndex] : null}
+                                            bugToEdit={editIndex !== null ? bugToEdit : null}
                                             updateBug={updateBug}
                                         />
                                     </div>
@@ -106,11 +124,10 @@ function BugList() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {filteredList.map((bug, index) => (
+                                    {filteredList.map((bug) => (
                                         <Bug
                                             bug={bug}
-                                            index={bugData.indexOf(bug)}
-                                            key={index}
+                                            key={bug.id}
                                             deleteBug={deleteBug}
                                             editItem={editItem}
                                         />
