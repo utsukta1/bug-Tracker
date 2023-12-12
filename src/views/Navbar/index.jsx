@@ -11,7 +11,10 @@ function Nav() {
     return (
         <>
             <div className="nav">
-                <Button title="Dashboard" />
+                <div className="nav-btns">
+                    <Button title="Dashboard" />
+                </div>
+
 
             </div>
         </>
