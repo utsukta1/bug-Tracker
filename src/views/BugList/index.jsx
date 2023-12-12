@@ -59,7 +59,7 @@ function BugList() {
         console.log(event.target.value);
 
     }
-    const getFilteredList = () => {
+    const filteredList = useMemo(() => {
         if (!filter) {
             return bugData;
         }
@@ -68,11 +68,7 @@ function BugList() {
 
         // return console.log("Filter bhayo")
 
-    }
-
-    var filteredList = useMemo(getFilteredList, [filter, bugData]);
-
-
+    }, [filter, bugData])
 
     return (
         <>
@@ -113,7 +109,7 @@ function BugList() {
                                     {filteredList.map((bug, index) => (
                                         <Bug
                                             bug={bug}
-                                            index={index}
+                                            index={bugData.indexOf(bug)}
                                             key={index}
                                             deleteBug={deleteBug}
                                             editItem={editItem}
