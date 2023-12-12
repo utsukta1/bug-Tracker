@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import Button from "../button";
 
 
 
@@ -9,7 +10,10 @@ import "./index.css";
 function Nav() {
     return (
         <>
-            <div className="nav">Nav-bar</div>
+            <div className="nav">
+                <Button title="Dashboard" />
+
+            </div>
         </>
 
     )
