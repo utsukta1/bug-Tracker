@@ -5,6 +5,8 @@ import './App.css'
 import BugRF from './views/BugList'
 import Nav from './views/Navbar'
 import BugList from './views/BugList'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Dashboard from './views/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +14,14 @@ function App() {
   return (
     <>
 
-      <BugList />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<BugList />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <BugList /> */}
 
 
 

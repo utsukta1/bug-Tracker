@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Nav from "../Navbar";
 import AddForm from "../AddForm";
 import Button from "../button";
@@ -85,6 +85,34 @@ function BugList() {
 
     }, [filter, bugData])
 
+    const [searchData, setSearchData] = useState('');
+
+    const handleChangeSearch = (event) => {
+        setSearchData(event.target.value);
+        console.log(event.target.value);
+
+    }
+    const searchList = useMemo(() => {
+        if (!searchData) {
+            return bugData;
+        }
+        const searchedBugs = bugData.filter((bug) => bug.project.toLowerCase().includes(searchData) || bug.title.toLowerCase().includes(searchData));
+        return searchedBugs;
+
+        // return console.log("Filter bhayo")
+
+    }, [searchData, bugData])
+
+    const combinedData = useMemo(() => {
+        return filteredList.filter(bug => {
+            return searchList.some(searchedBug => searchedBug.id === bug.id);
+        });
+    }, [filteredList, searchList]);
+
+
+
+
+
     const bugToEdit = useMemo(() => {
         return bugData.find((bug) => bug.id === editIndex)
     }, [bugData, editIndex]);
@@ -97,7 +125,7 @@ function BugList() {
                     <div className="container">
                         <div className="btn">
                             <div><h1>Bug list</h1></div>
-                            <Search />
+                            <Search onChange={handleChangeSearch} />
                             <Filter onChange={handleChangeFilter} />
                             <Button onClick={toggleModal} title="Report a bug" />
                             {showModal && (
@@ -113,7 +141,7 @@ function BugList() {
                                 </div>
                             )}
                         </div>
-                        {filteredList.length > 0 ? (
+                        {combinedData.length > 0 ? (
                             <table className="category-table">
                                 <thead>
                                     <tr>
@@ -126,7 +154,7 @@ function BugList() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {filteredList.map((bug) => (
+                                    {combinedData.map((bug) => (
                                         <Bug
                                             bug={bug}
                                             key={bug.id}

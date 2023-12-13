@@ -1,25 +1,18 @@
 import React from "react";
 import "./index.css";
-import Button from "../button";
-
-
-
-
-
+import { Link } from "react-router-dom";
 
 function Nav() {
     return (
         <>
             <div className="nav">
                 <div className="nav-btns">
-                    <Button title="Dashboard" />
+                    <Link to="/">Home</Link>
+                    <Link to="/dashboard">Dashboard</Link>
                 </div>
-
-
             </div>
         </>
-
-    )
+    );
 }
 
 export default Nav;
