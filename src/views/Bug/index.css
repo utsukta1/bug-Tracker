@@ -1,5 +1,5 @@
 .btns {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
     opacity: 0.5;
 }

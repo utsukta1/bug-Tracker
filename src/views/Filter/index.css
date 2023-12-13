@@ -1,4 +1,17 @@
 .filter-options {
     display: flex;
     flex-direction: column;
+
+}
+
+.filter-options select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.filter-options option {
+    background-color: white;
+    color: black;
 }

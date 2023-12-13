@@ -5,6 +5,7 @@ import Button from "../button";
 import "./index.css";
 import Bug from "../Bug";
 import Filter from "../Filter";
+import Search from "../Search";
 
 function BugList() {
     const [bugData, setBugData] = useState(() => {
@@ -36,7 +37,7 @@ function BugList() {
         setShowModal(false);
     };
 
-    console.log('aa', bugData);
+    // console.log('aa', bugData);
 
     // const deleteBug = (index) => {
     //     const updatedBugs = [...bugData];
@@ -53,7 +54,7 @@ function BugList() {
 
 
     const editItem = (id) => {
-        console.log('id', id);
+        // console.log('id', id);
         setEditIndex(id);
         toggleModal();
     };
@@ -85,7 +86,7 @@ function BugList() {
     }, [filter, bugData])
 
     const bugToEdit = useMemo(() => {
-        return bugData.find((bug) => bug.id = editIndex)
+        return bugData.find((bug) => bug.id === editIndex)
     }, [bugData, editIndex]);
 
     return (
@@ -96,6 +97,7 @@ function BugList() {
                     <div className="container">
                         <div className="btn">
                             <div><h1>Bug list</h1></div>
+                            <Search />
                             <Filter onChange={handleChangeFilter} />
                             <Button onClick={toggleModal} title="Report a bug" />
                             {showModal && (

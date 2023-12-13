@@ -9,9 +9,9 @@ function Filter(props) {
 
     return (
         <>
-            <div className="filter-options"> Filter by priority
+            <div className="filter-options">
                 <select name="filter" value={filter} onChange={onChange}>
-                    <option value="">-----</option>
+                    <option value="">--Select Priority--</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>

@@ -14,7 +14,7 @@ function Bug(props) {
             <td>{bug.status}</td>
             <td>
                 <div className="btns">
-                    <Button onClick={() => deleteBug(bug.id)} title="Delete" />
+                    <Button onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
                     <Button onClick={() => editItem(bug.id)} title="Edit" />
                 </div>
             </td>
