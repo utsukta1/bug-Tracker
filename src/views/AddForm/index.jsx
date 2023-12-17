@@ -110,7 +110,12 @@ function AddForm(props) {
                     type="text"
                     className="inp"
                     value={formState.title}
-                    onChange={(e) => setFormState({ ...formState, title: e.target.value })}
+                    onChange={(e) => setFormState({
+                        ...formState, title: e.target.value, errors: {
+                            ...formState.errors,
+                            title: ""
+                        }
+                    })}
                     placeholder="Title"
                 />
                 {formState.errors.title && <span className="error">{formState.errors.title}</span>}
@@ -118,7 +123,12 @@ function AddForm(props) {
                     type="text"
                     className="inp"
                     value={formState.project}
-                    onChange={(e) => setFormState({ ...formState, project: e.target.value })}
+                    onChange={(e) => setFormState({
+                        ...formState, project: e.target.value, errors: {
+                            ...formState.errors,
+                            project: ""
+                        }
+                    })}
                     placeholder="Project"
                 />
                 {formState.errors.project && <span className="error">{formState.errors.project}</span>}
@@ -136,7 +146,12 @@ function AddForm(props) {
                     type="text"
                     className="inp"
                     value={formState.status}
-                    onChange={(e) => setFormState({ ...formState, status: e.target.value })}
+                    onChange={(e) => setFormState({
+                        ...formState, status: e.target.value, errors: {
+                            ...formState.errors,
+                            status: ""
+                        }
+                    })}
                     placeholder="Status"
                 />
                 {formState.errors.status && <span className="error">{formState.errors.status}</span>}
@@ -146,7 +161,12 @@ function AddForm(props) {
                     cols="30"
                     rows="10"
                     value={formState.desc}
-                    onChange={(e) => setFormState({ ...formState, desc: e.target.value })}
+                    onChange={(e) => setFormState({
+                        ...formState, desc: e.target.value, errors: {
+                            ...formState.errors,
+                            desc: ""
+                        }
+                    })}
                     placeholder="Description"
                 ></textarea>
                 {formState.errors.desc && <span className="error">{formState.errors.desc}</span>}

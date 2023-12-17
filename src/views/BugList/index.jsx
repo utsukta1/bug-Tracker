@@ -96,7 +96,7 @@ function BugList() {
         if (!searchData) {
             return bugData;
         }
-        const searchedBugs = bugData.filter((bug) => bug.project.toLowerCase().includes(searchData) || bug.title.toLowerCase().includes(searchData) || bug.desc.toLowerCase().includes(searchData));
+        const searchedBugs = bugData.filter((bug) => bug.project.toLowerCase().includes(searchData) || bug.title.toLowerCase().includes(searchData) || bug.desc.toLowerCase().includes(searchData) || bug.status.toLowerCase().includes(searchData));
         return searchedBugs;
 
         // return console.log("Filter bhayo")
