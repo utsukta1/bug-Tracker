@@ -3,44 +3,51 @@
     flex-direction: column;
     justify-content: space-between;
 
-
-
     .aside {
         display: flex;
         flex-direction: row;
+
+
         /* gap: 2rem; */
 
         .as {
             display: flex;
 
 
-            flex-grow: 1;
+            /* flex-grow: 1; */
             background-color: #F9F5F6;
             color: black;
             height: 100vh;
         }
 
 
-
-
         .container {
-            /* flex-basis: 100%; */
+
             width: 80%;
             margin: 0 auto;
+            margin-top: 20px;
 
 
             .category-table {
                 width: 100%;
 
                 border-collapse: collapse;
-                /* width: 120vh; */
-                /* font-family: Arial, Helvetica, sans-serif; */
+
                 margin-top: 30px;
+                padding: 20px;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+
             }
+
+
+
 
             .category-table td,
             th {
-                border: 1px solid #ddd;
+                border: none;
+                border-bottom: 1px solid #ddd;
                 padding: 20px;
             }
 
@@ -51,27 +58,52 @@
                 background-color: #D2E9E9;
                 color: black;
 
+
             }
 
             .category-table tr:nth-child(even) {
                 background-color: #F8F6F4
             }
 
+
             .category-table tr:hover {
                 background-color: #ddd;
             }
 
-            .btn {
-                width: 100%;
+            .category-table th:nth-child(6),
+            .category-table td:nth-child(6) {
+                width: 80px;
 
+            }
+
+            .btn {
                 display: flex;
                 justify-content: space-between;
-                margin-top: 30px;
-
-
+                align-items: center;
+                margin-bottom: 20px;
 
             }
         }
+
+        .nobugs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            /* Adjust height as needed */
+            background-color: #f5f5f5;
+            /* Light gray background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+        }
+
+        .nobugs p {
+            font-size: 20px;
+            color: #888;
+            /* Text color */
+        }
+
 
     }
 }

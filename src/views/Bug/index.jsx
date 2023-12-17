@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../button";
 import "./index.css";
+import { RiDeleteBin6Line, RiEdit2Line } from "react-icons/ri";
 
 function Bug(props) {
     const { bug, deleteBug, editItem } = props;
@@ -14,8 +15,11 @@ function Bug(props) {
             <td>{bug.status}</td>
             <td>
                 <div className="btns">
-                    <Button onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
-                    <Button onClick={() => editItem(bug.id)} title="Edit" />
+                    {/* <Button onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
+                    <Button onClick={() => editItem(bug.id)} title="Edit" /> */}
+                    <RiDeleteBin6Line onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
+                    <RiEdit2Line onClick={() => editItem(bug.id)} title="Edit" />
+
                 </div>
             </td>
         </tr>

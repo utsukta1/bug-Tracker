@@ -96,7 +96,7 @@ function BugList() {
         if (!searchData) {
             return bugData;
         }
-        const searchedBugs = bugData.filter((bug) => bug.project.toLowerCase().includes(searchData) || bug.title.toLowerCase().includes(searchData));
+        const searchedBugs = bugData.filter((bug) => bug.project.toLowerCase().includes(searchData) || bug.title.toLowerCase().includes(searchData) || bug.desc.toLowerCase().includes(searchData));
         return searchedBugs;
 
         // return console.log("Filter bhayo")
@@ -116,6 +116,9 @@ function BugList() {
     const bugToEdit = useMemo(() => {
         return bugData.find((bug) => bug.id === editIndex)
     }, [bugData, editIndex]);
+
+    // const totalBugs = bugData.length;
+    // console.log("Buglist", totalBugs);
 
     return (
         <>
@@ -165,7 +168,8 @@ function BugList() {
                                 </tbody>
                             </table>
                         ) : (
-                            <p>No Bugs!</p>
+                            <div className="nobugs"><p>Woohoo!! No Bugs!</p></div>
+
                         )}
                     </div>
                 </div>
