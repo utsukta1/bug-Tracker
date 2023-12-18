@@ -7,6 +7,7 @@
     border-radius: 4px;
     cursor: pointer;
 
+
 }
 
 .modal {
@@ -38,7 +39,8 @@
 .close {
     color: #aaa;
     float: right;
-    top: -5px;
+    top: -27px;
+    padding-right: 10px;
     position: relative;
     font-size: 28px;
     font-weight: bold;

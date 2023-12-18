@@ -1,7 +1,8 @@
 .total {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+
 
     .aside {
         display: flex;
@@ -55,7 +56,7 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #D2E9E9;
+                /* background-color: #D2E9E9; */
                 color: black;
 
 
@@ -106,10 +107,15 @@
 
         .bugreporting {
             background-color: #D2E9E9;
-            padding: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             text-align: center;
             font-size: 20px;
             margin-bottom: 10px;
+
+            .brf {
+                text-align: left;
+            }
 
 
         }

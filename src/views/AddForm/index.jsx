@@ -165,7 +165,7 @@ function AddForm(props) {
                     name="desc"
                     id="desc"
                     cols="30"
-                    rows="10"
+                    rows="3"
                     value={formState.desc}
                     onChange={(e) => setFormState({
                         ...formState, desc: e.target.value, errors: {
@@ -178,7 +178,11 @@ function AddForm(props) {
                 {formState.errors.desc && <span className="error">{formState.errors.desc}</span>}
 
             </div>
-            <Button onClick={saveData} type="submit" title={bugToEdit ? "Update" : "Save"} />
+            <div className="right">
+                <Button onClick={saveData} type="submit" title={bugToEdit ? "Update" : "Save"} />
+
+            </div>
+
 
         </>
     );

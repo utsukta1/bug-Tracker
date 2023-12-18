@@ -134,7 +134,7 @@ function BugList() {
                             {showModal && (
                                 <div className="modal">
                                     <div className="modal-content">
-                                        <div className="bugreporting">Bug Reporting form
+                                        <div className="bugreporting"><div className="brf">Bug Reporting form</div>
                                             <span className="close" onClick={toggleModal}>&times;</span>
                                         </div>
 

@@ -41,3 +41,7 @@ textarea {
 .error {
     color: red;
 }
+
+.right {
+    margin-left: 83%;
+}

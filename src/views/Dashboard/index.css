@@ -4,29 +4,39 @@ body {
 }
 
 .dashboard-title {
+
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .dashboard-title h1 {
-    font-size: 32px;
+
+    font-size: 28px;
     color: #333;
+
 }
 
 .chart-container .barchart {
     height: 280px;
     width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
 }
 
 .chart-container .pie-chart {
     height: 280px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
 
 }
 
 .chart-container {
     display: flex;
-    gap: 10rem;
+    gap: 6rem;
     width: 80%;
     margin: 0 auto;
     margin-top: 10px;

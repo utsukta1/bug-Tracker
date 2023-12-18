@@ -1,5 +1,6 @@
 .nav {
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: #D2E9E9;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -8,18 +9,21 @@
 }
 
 .nav-align {
-    background-color: #f5f5f5;
+    background-color: #D2E9E9;
     display: flex;
     width: 80%;
     margin: 0 auto;
     justify-content: space-between;
+
+
 
 }
 
 .nav-btns {
 
     display: flex;
-    gap: 2rem;
+    flex-direction: row;
+
 }
 
 
@@ -29,7 +33,9 @@
 .nav-btns a {
     text-decoration: none;
     color: #333;
+    /* font-weight: bold; */
     padding: 8px 16px;
+
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }

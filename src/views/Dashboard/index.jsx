@@ -45,7 +45,7 @@ function Dashboard() {
                             datasets: [{
                                 label: "no. of bugs",
                                 data: [noOfHighPriority, noOfMediumPriority, noOfLowPriority],
-                                backgroundColor: ["red", "blue", "green"]
+                                backgroundColor: ["rgb(250, 169, 163)", "rgb(248, 205, 118)", "rgb(167, 240, 83)"]
                             },],
                         }}
                         options={{
@@ -79,6 +79,7 @@ function Dashboard() {
                                     data: [
                                         noOfHighPriority, noOfMediumPriority, noOfLowPriority
                                     ],
+                                    backgroundColor: ["rgb(250, 169, 163)", "rgb(248, 205, 118)", "rgb(167, 240, 83)"]
 
                                 },
                             ],
@@ -98,3 +99,4 @@ function Dashboard() {
     )
 }
 export default Dashboard;
+

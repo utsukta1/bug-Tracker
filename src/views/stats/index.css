@@ -1,8 +1,9 @@
 .dashboard-bugs {
     display: flex;
     justify-content: space-around;
-    background-color: #f5f5f5;
-    padding: 20px;
+    /* background-color: #f5f5f5; */
+    background-color: #f0f0f0;
+    /* padding: 20px; */
     border-radius: 8px;
     width: 80%;
     margin: 0 auto;
@@ -25,26 +26,30 @@
 }
 
 .card:nth-child(1) {
-    background-color: #ffcc66;
+    background-color: rgb(247, 246, 203);
+    /* color: rgb(248, 205, 118) */
 }
 
 .card:nth-child(2) {
-    background-color: #66cccc;
+    background-color: rgb(250, 169, 163);
+
+
 }
 
 .card:nth-child(3) {
-    background-color: #cc99ff;
+    background-color: rgb(248, 205, 118);
 }
 
 
 .card:nth-child(4) {
-    background-color: #33FF99;
+    background-color: rgb(167, 240, 83);
+
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
-    color: #fff;
+    color: black;
 }
 
 .card-content {
