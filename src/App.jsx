@@ -17,8 +17,8 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route index element={<BugList />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
+          <Route path='/buglist' element={<BugList />} />
         </Routes>
       </BrowserRouter>
 

@@ -17,8 +17,8 @@ function Bug(props) {
                 <div className="btns">
                     {/* <Button onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
                     <Button onClick={() => editItem(bug.id)} title="Edit" /> */}
-                    <RiDeleteBin6Line onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
                     <RiEdit2Line onClick={() => editItem(bug.id)} title="Edit" />
+                    <RiDeleteBin6Line onClick={() => { if (window.confirm("Delete the Item?")) deleteBug(bug.id) }} title="Delete" />
 
                 </div>
             </td>

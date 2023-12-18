@@ -6,6 +6,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 .modal {
@@ -25,7 +26,7 @@
     background-color: #fefefe;
     margin: auto;
     /* Center horizontally */
-    margin-top: 7%;
+    margin-top: 2%;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -37,7 +38,10 @@
 .close {
     color: #aaa;
     float: right;
+    top: -5px;
+    position: relative;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+
 }

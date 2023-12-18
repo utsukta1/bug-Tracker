@@ -12,7 +12,7 @@ function Nav() {
                 <div className="nav-align">
                     <div className="nav-btns">
                         <Link to="/">Home</Link>
-                        <Link to={{ pathname: "/dashboard" }}>Dashboard</Link>
+                        <Link to={{ pathname: "/buglist" }}>Buglist</Link>
 
 
                     </div>

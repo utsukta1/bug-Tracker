@@ -134,7 +134,10 @@ function BugList() {
                             {showModal && (
                                 <div className="modal">
                                     <div className="modal-content">
-                                        <span className="close" onClick={toggleModal}>&times;</span>
+                                        <div className="bugreporting">Bug Reporting form
+                                            <span className="close" onClick={toggleModal}>&times;</span>
+                                        </div>
+
                                         <AddForm
                                             onAddSuccess={onAddSuccess}
                                             bugToEdit={editIndex !== null ? bugToEdit : null}

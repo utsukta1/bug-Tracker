@@ -106,6 +106,8 @@ function AddForm(props) {
         <>
 
             <div className="form-input">
+
+                <label>Title:</label>
                 <input
                     type="text"
                     className="inp"
@@ -119,6 +121,7 @@ function AddForm(props) {
                     placeholder="Title"
                 />
                 {formState.errors.title && <span className="error">{formState.errors.title}</span>}
+                <label>Project:</label>
                 <input
                     type="text"
                     className="inp"
@@ -139,9 +142,11 @@ function AddForm(props) {
                     onChange={(e) => setFormState({ ...formState, priority: e.target.value })}
                     placeholder="Priority"
                 /> */}
+                <label>Priority:</label>
                 <Filter value={formState.priority}
                     onChange={handleChangeFilter1} />
                 {formState.errors.priority && <span className="error">{formState.errors.priority}</span>}
+                <label>Status:</label>
                 <input
                     type="text"
                     className="inp"
@@ -155,6 +160,7 @@ function AddForm(props) {
                     placeholder="Status"
                 />
                 {formState.errors.status && <span className="error">{formState.errors.status}</span>}
+                <label>Description:</label>
                 <textarea
                     name="desc"
                     id="desc"

@@ -104,6 +104,16 @@
             /* Text color */
         }
 
+        .bugreporting {
+            background-color: #D2E9E9;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+
+
+        }
+
 
     }
 }
